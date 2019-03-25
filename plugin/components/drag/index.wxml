@@ -1,0 +1,12 @@
+
+<view id="dg_container" class='dg_container {{focus?"active":""}}' style="width:{{width}}rpx;height:{{height}}rpx;background-color:{{bgColor}};transform:translateX({{position.left}}px) translateY({{position.top}}px) scale({{position.scale}}) rotate({{position.rotate}}deg)" bind:touchstart="containerStart" bind:touchmove="containerMove" bind:touchend="containerEnd">
+  <view class='dg_content'>
+    <slot name= "content"></slot>
+  </view>
+  <view wx:if="{{focus&&showClose}}" class='dg_btn1' style='width:{{iconSize}}rpx;height:{{iconSize}}rpx;left:-{{iconSize/2}}rpx;bottom:-{{iconSize/2}}rpx;transform:scale({{1/position.scale}})' capture-catch:tap='close'>
+    <slot name= "left"></slot>
+  </view>
+  <view wx:if="{{focus}}" id="dg_btn2" class='dg_btn2' style='width:{{iconSize}}rpx;height:{{iconSize}}rpx;right:-{{iconSize/2}}rpx;bottom:-{{iconSize/2}}rpx;transform:scale({{1/position.scale}})' capture-catch:touchstart='imageStart' capture-catch:touchmove='imageMove' capture-catch:touchend="containerEnd">
+    <slot name= "right"></slot>
+  </view>
+</view>

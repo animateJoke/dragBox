@@ -1,0 +1,6 @@
+{
+  "publicComponents": {
+    "drag": "components/drag/index"
+  },
+  "main": "index.js"
+}

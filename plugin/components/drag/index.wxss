@@ -1,0 +1,18 @@
+.dg_container{
+  background: #ccc;
+  position: relative;
+}
+.dg_content{
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+}
+.dg_images{
+  width: 100rpx;
+  height:100rpx;
+  display: block;
+}
+.dg_btn1,.dg_btn2{
+  position: absolute;
+  overflow: hidden;
+}
