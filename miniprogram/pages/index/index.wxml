@@ -1,5 +1,5 @@
 <view class='box'>
-<drag class="drag" width="{{200}}" iconSize="{{50}}" height="{{200}}" bgColor="#0094ff" url="{{url}}" focus="{{flag}}" catchtap="focus" bind:close="close" bind:change="change" position="{{position}}">
+<drag class="drag" width="{{200}}" iconSize="{{50}}" height="{{200}}" bgColor="#0094ff" focus="{{flag}}" catchtap="focus" bind:close="close" bind:change="change" position="{{position}}">
   <image class='img' slot="content" src="https://wx.rubansh.com/130/rubansh/24e4b1bef7f8cef1.png"></image>
    <icon type="cancel" size="20" slot="left"/>
    <icon type="success" size="20" slot="right"/>

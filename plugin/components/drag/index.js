@@ -3,10 +3,6 @@ Component({
     multipleSlots: true, //开启插槽
   },
   properties: {
-    "url": { //图片资源链接
-      type: String,
-      value: ""
-    },
     "width": { //容器宽度
       type: Number,
       value: 300
@@ -17,7 +13,7 @@ Component({
     },
     "bgColor": {
       type: String,
-      value: "#fff"
+      value: "transparent"
     },
     "scale": { //小图片是否可以缩放
       type: Boolean,
@@ -89,7 +85,7 @@ Component({
     },
     //移动中
     containerMove(e) {
-      if (this.data.setDataFlag) {
+      if (this.data.setDataFlag && this.properties.translate) {
         this.data.setDataFlag = false;
         setTimeout(() => {
           this.data.setDataFlag = true
@@ -172,10 +168,14 @@ Component({
 
         let Deg = Math.floor(this.data.degStart - d1),
           scale = s / this.data.sStart;
-        this.setData({
-          ["position.rotate"]: this.data.originalRotate + Deg,
-          ["position.scale"]: this.data.originalScale * scale.toFixed(2)
-        })
+          let dataSet={}
+          if(this.properties.scale){
+            dataSet[["position.scale"]] = this.data.originalScale * scale.toFixed(2);
+          }
+        if (this.properties.rotate) {
+          dataSet[["position.rotate"]] = this.data.originalRotate + Deg;
+        }
+        this.setData(dataSet)
       }
     }
   },
