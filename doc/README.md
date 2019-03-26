@@ -46,6 +46,13 @@ drag 属性：
         rotate: 0
       }
 
+插槽
+
+  content 容器内容
+
+  left 左侧按钮
+
+  right 右侧按钮
 
 
 
